@@ -9,6 +9,12 @@ Router.map(function() {
   this.route('postSubmit', {
     path: 'submit',
   });
+  this.route('postView', {
+    path: 'view/:_id',
+    data: function() {
+      return Posts.findOne({_id: this.params._id});
+    }
+  });
 });
 
 var loggedInOnly = function() {
