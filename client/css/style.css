@@ -1,0 +1,17 @@
+#posts {
+  background: #f6f6ef;
+}
+
+.title {
+  color: black;
+  font-size: 16px;
+}
+
+.domain {
+  color: #CCC;
+  font-size: 12px;
+}
+
+.post {
+  margin: 10px 0;
+}
