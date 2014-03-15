@@ -4,14 +4,14 @@ Template.postSubmit.events({
     var post = {
       title: $('[name="title"]').val(),
       url: $('[name="url"]').val(),
-      createdAt: Date.now(),
-      userId: Meteor.userId(),
     };
-    post._id = Posts.insert(post);
-    if(post._id) {
-      Router.go('/');
-    } else {
-      alert('Deu erro :(');
-    }
+    Meteor.call('postSubmit', post, function(error, id) {
+      post._id = id;
+      if(post._id) {
+        Router.go('/');
+      } else {
+        alert('Deu erro :(');
+      }
+    });
   },
 });
